@@ -73,7 +73,7 @@ const App = () => {
         window.removeEventListener("beforeunload", handleBeforeUnload);
       };
     }
-  }, [username]);
+  }, [username,ydoc]);
 
   if (!username) {
     console.log("username:", username);
