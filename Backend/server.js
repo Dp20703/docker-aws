@@ -27,6 +27,6 @@ app.get("/health", (req, res) => {
 })
 
 httpServer.listen(3000, () => {
-    console.log("Server is listening on PORT http://localhost:3000");
+    console.log("Server is listening on PORT 3000");
 })
 

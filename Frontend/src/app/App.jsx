@@ -36,14 +36,9 @@ const App = () => {
 
   useEffect(() => {
     if (username) {
-      const provider = new SocketIOProvider(
-        "http://localhost:3000",
-        "monaco",
-        ydoc,
-        {
-          autoConnect: true,
-        },
-      );
+      const provider = new SocketIOProvider("/", "monaco", ydoc, {
+        autoConnect: true,
+      });
 
       provider.awareness.setLocalStateField("user", { username });
       const states = Array.from(provider?.awareness?.getStates().values());
@@ -73,7 +68,7 @@ const App = () => {
         window.removeEventListener("beforeunload", handleBeforeUnload);
       };
     }
-  }, [username,ydoc]);
+  }, [username, ydoc]);
 
   if (!username) {
     console.log("username:", username);
